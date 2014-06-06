@@ -1,3 +1,22 @@
 Vagrant Dev
 
 A Vagrant dev box setup for the MIST team.
+
+This box includes Python in a virtualenv, Nginx, Gunicorn and Flask.
+
+* install virtualbox https://www.virtualbox.org/wiki/Downloads
+* install vagrant http://www.vagrantup.com/downloads
+
+$ vagrant box add hashicorp/precise32
+$ vagrant up
+$ vagrant ssh
+$ cd /usr/local/dev && . bin/activate
+$ gunicorn app:app -b localhost:8080
+
+* browse http://127.0.0.1:8080/
+
+When done, hit ctrl+c to terminate the gunicorn process.
+
+$ exit
+$ vagrant destroy
+
